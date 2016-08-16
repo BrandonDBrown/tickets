@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  link_to_ticket: MyString
+  ticket_title: MyString
+  migration: false
+  rake_task: false
+  other_prod_concern: MyString
+  string: MyString
+  regression_concern: false
+  regression_textbox: MyString
+  ticket_notes: MyString
+
+two:
+  link_to_ticket: MyString
+  ticket_title: MyString
+  migration: false
+  rake_task: false
+  other_prod_concern: MyString
+  string: MyString
+  regression_concern: false
+  regression_textbox: MyString
+  ticket_notes: MyString

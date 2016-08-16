@@ -1,0 +1,17 @@
+<%= form_for(@card, url: cards_new_path) do |f| %>
+  <%= f.number_field :link_to_ticket %>
+  <%= f.text_field :ticket_title %>
+  <%= f.check_box(:migration) %>
+  <%= f.label(:migration, "Migration") %>
+  <%= f.check_box(:rake_task) %>
+  <%= f.label(:rake_task, "Rake Task") %>
+  <%= f.text_field :other_prod_concern %>
+  <%= f.check_box(:regression_concern) %>
+  <%= f.label(:regression_concern, "Regression Concern") %>
+  <%= f.text_field :regression_textbox %>
+  <%= f.text_field :ticket_notes %>
+  <%= f.select(:status, ['Working', 'Blocked', 'Completed']) %>
+  <%= f.check_box(:archived) %>
+  <%= f.label(:archived, "Archive") %>
+  <%= f.submit "Sign up", class:"form-control btn btn-register" %>
+<% end %>

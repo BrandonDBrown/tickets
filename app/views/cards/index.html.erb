@@ -1,0 +1,80 @@
+<div class="container">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#tickets" aria-controls="tickets" role="tab" data-toggle="tab">Tickets</a></li>
+    <li role="presentation"><a href="#regression" aria-controls="regression" role="tab" data-toggle="tab">Regressions</a></li>
+    <li role="presentation"><a href="#production" aria-controls="production" role="tab" data-toggle="tab">Production</a></li>
+    <li role="presentation"><a href="#archived" aria-controls="archived" role="tab" data-toggle="tab">Archived</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="tickets">
+      <!-- Beginning of Square Grid-->
+      <div class="row">
+          <!--Buttons for Sorting-->
+        <div id="filters" class="button-group">
+          <button type="button" class="button is-checked" data-filter="*" data-toggle="tooltip" data-placement="bottom" title="Filter to find the perfect brew">show all</button>
+          <button type="button" class="button" data-toggle="tooltip" data-placement="bottom" data-filter=".working">Working</button>
+          <button type="button" class="button" data-toggle="tooltip" data-placement="bottom" data-filter=".blocked">Blocked</button>
+          <button type="button" class="button" data-toggle="tooltip" data-placement="bottom" data-filter=".completed">Completed</button>
+        </div>
+      </div>
+      <div class="btn btn-success" data-toggle="modal" data-target="#newTicket">New Ticket</div>
+      <div class="row isotope">
+        <% @cards.each do |card| %>
+        <div class="col-md-3" data-toggle="modal" data-target="#editTicket<%= card.id %>">
+          <div class="thumbnail ticketinfo gradient">
+            <%= card.link_to_ticket %>
+            <%= card.ticket_title %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  <!--      End of Square Grid-->
+    <div role="tabpanel" class="tab-pane fade" id="regression">...</div>
+    <div role="tabpanel" class="tab-pane fade" id="production">...</div>
+    <div role="tabpanel" class="tab-pane fade" id="archived">...</div>
+  </div>
+</div>
+
+<!-- Modal -->
+<% @cards.each do |card| %>
+  <div class="modal fade" id="editTicket<%= card.id %>" role="dialog">
+    <div class="modal-dialog">
+      <!-- New ticket modal -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><%= card.link_to_ticket %></h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+  <div class="modal fade" id="newTicket" role="dialog">
+    <div class="modal-dialog">
+      <!-- New ticket modal -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">New Ticket</h4>
+        </div>
+        <div class="modal-body">
+          <%= render 'shared/cardform' %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
