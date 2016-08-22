@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
 
   get 'cards/update'
-
+  # get 'cards/edit'
+  get 'cards/:id/edit' => 'cards#edit', as: :edit
+  patch 'cards/:id/edit' => 'cards#update', as: :update
   get 'cards/destroy'
 
   root 'cards#index'

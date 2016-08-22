@@ -1,0 +1,4 @@
+$( ".btn-default" ).on( "click", function(e) {
+  e.preventDefault();
+  $('.editor').html("<%= j render(partial: 'shared/showCardModal') %>");
+  });

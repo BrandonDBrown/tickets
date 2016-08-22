@@ -1,7 +1,7 @@
 $(document).ready(function() {
   // init Isotope
   var $container = $('.isotope').isotope({
-    itemSelector: '.col-md-4',
+    itemSelector: '.col-md-3',
     layoutMode: 'fitRows'
   });
 

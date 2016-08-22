@@ -13,9 +13,14 @@ class CardsController < ApplicationController
   end
 
   def edit
+    @card_edit = Card.find(params[:id])
   end
 
   def update
+    @card = Card.find(params[:id])
+    if @card.update_attributes(card_params)
+      redirect_to root_path
+    end
   end
 
   def destroy
@@ -23,7 +28,7 @@ class CardsController < ApplicationController
 
   def index
     @card = Card.new
-    @cards = Card.where(archived: false)
+    @cards = Card.all
   end
 
   def show

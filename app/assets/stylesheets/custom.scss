@@ -37,3 +37,39 @@
       #084C61, #56A3A6
     );
 }
+
+.modal-content {
+  background-color: hsl(180, 24%, 12%);
+  color:#6b83ac;
+  font-family: 'Lato', sans-serif;
+}
+
+hr {
+  color: whitesmoke;
+  margin-top:2px;
+}
+
+#card_ticket_notes {
+  height:100px;
+  width:100%;
+}
+
+#card_other_prod_concern, #card_regression_textbox {
+  width:100%;
+  margin-top: 10px;
+}
+
+.btn-danger {
+  position:absolute;
+  top:32px;
+  left:385px;
+}
+.btn-success {
+  position:absolute;
+  top:524px;
+  left:420px;
+}
+
+#filters {
+  margin-bottom:10px;
+}

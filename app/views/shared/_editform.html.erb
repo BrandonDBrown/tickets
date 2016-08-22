@@ -1,9 +1,8 @@
 <div class="row">
-  <%= form_for(@card, url: cards_new_path) do |f| %>
-    <div class=col-md-6><%= f.number_field :link_to_ticket %></div>
-    <div class=col-md-6><%= f.text_field :ticket_title %></div>
-    <div class=col-md-12><h4>Ticket Status</h4></div>
-    <div class="col-md-12"><%= f.select(:status, ['Working', 'Blocked', 'Completed']) %></div>
+  <%= form_for(@card_edit, remote: true, url: edit_path) do |f| %>
+    <div class=col-md-4><%= f.number_field :link_to_ticket %></div>
+    <div class=col-md-4><%= f.text_field :ticket_title %></div>
+    <div class="col-md-4"><%= f.select(:status, ['Working', 'Blocked', 'Completed']) %></div>
     <div class=col-md-12><h4>Ticket Notes</h4></div>
     <div class="col-md-12"><%= f.text_area :ticket_notes %></div>
     <div class=col-md-12><h4>Production Notes</h4></div>
@@ -15,6 +14,6 @@
     <div class="col-md-12"><%= f.text_field :regression_textbox %></div>
     <div class=col-md-12><h4>Archive</h4></div>
     <div class="col-md-12"><%= f.check_box(:archived) %></div>
-    <%= f.submit "New Ticket", class:"btn btn-success" %>
+    <div class="col-md-12"><%= f.submit "Update", class:"btn btn-danger" %></div>
   <% end %>
 </div>
