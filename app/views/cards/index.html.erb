@@ -24,7 +24,7 @@
       </div>
       <div class="row isotope">
         <% @cards.where('archived =?', false).each do |card| %>
-        <div class="col-md-3 <%= card.status %>" data-toggle="modal" data-target="#editTicket<%= card.id %>">
+        <div class="col-md-3 col-xs-6 <%= card.status %>" data-toggle="modal" data-target="#editTicket<%= card.id %>">
           <div class="thumbnail ticketinfo gradient">
             <%= card.link_to_ticket %>
             <%= card.ticket_title %>
@@ -36,7 +36,7 @@
   <!--      End of Square Grid-->
     <div role="tabpanel" class="tab-pane fade" id="regression">
         <% @cards.where('regression_concern =? AND archived =?', true,false).each do |card| %>
-          <div class="col-md-3" data-toggle="modal" data-target="#editTicket<%= card.id %>">
+          <div class="col-md-3 col-xs-6" data-toggle="modal" data-target="#editTicket<%= card.id %>">
             <div class="thumbnail ticketinfo gradient">
               <%= card.link_to_ticket %>
               <%= card.ticket_title %>
@@ -46,7 +46,7 @@
     </div>
     <div role="tabpanel" class="tab-pane fade" id="production">
       <% @cards.where('rake_task=? OR migration=?', true, true).where('archived =?', false).each do |card| %>
-        <div class="col-md-3" data-toggle="modal" data-target="#editTicket<%= card.id %>">
+        <div class="col-md-3 col-xs-6" data-toggle="modal" data-target="#editTicket<%= card.id %>">
           <div class="thumbnail ticketinfo gradient">
             <%= card.link_to_ticket %>
             <%= card.ticket_title %>
@@ -56,7 +56,7 @@
     </div>
     <div role="tabpanel" class="tab-pane fade" id="archived">
       <% @cards.where('archived =?', true).each do |card| %>
-        <div class="col-md-3" data-toggle="modal" data-target="#editTicket<%= card.id %>">
+        <div class="col-md-3 col-xs-6" data-toggle="modal" data-target="#editTicket<%= card.id %>">
           <div class="thumbnail ticketinfo gradient">
             <%= card.link_to_ticket %>
             <%= card.ticket_title %>
@@ -81,14 +81,14 @@
             <div class=col-md-12><h4>Ticket Status</h4></div>
             <div class="col-md-12"><%= card.status %></div>
             <div class=col-md-12><h4>Ticket Notes</h4></div>
-            <div class="col-md-12"><%= card.ticket_notes %></div>
+            <div class="col-md-12"><%= simple_format card.ticket_notes %></div>
             <div class=col-md-12><h4>Production Notes</h4></div>
             <div class=col-md-6>Rake Task: <%= card.rake_task %></div>
             <div class=col-md-6>Migration: <%= card.migration %></div>
-            <div class="col-md-12"><%= card.other_prod_concern %></div>
+            <div class="col-md-12"><%= simple_format card.other_prod_concern %></div>
             <div class=col-md-12><h4>Regression Notes</h4></div>
             <div class="col-md-12"><%= card.regression_concern %></div>
-            <div class="col-md-12"><%= card.regression_textbox %></div>
+            <div class="col-md-12"><%= simple_format card.regression_textbox %></div>
             <div class=col-md-12><h4>Archive</h4></div>
             <div class="col-md-12"><%= card.archived %></div>
           </div>

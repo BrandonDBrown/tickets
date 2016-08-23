@@ -1,19 +1,18 @@
 <div class="row">
   <%= form_for(@card_edit, remote: true, url: edit_path) do |f| %>
-    <div class=col-md-4><%= f.number_field :link_to_ticket %></div>
-    <div class=col-md-4><%= f.text_field :ticket_title %></div>
-    <div class="col-md-4"><%= f.select(:status, ['Working', 'Blocked', 'Completed']) %></div>
-    <div class=col-md-12><h4>Ticket Notes</h4></div>
+    <div class="col-md-4 col-xs-4"><%= f.number_field :link_to_ticket %></div>
+    <div class="col-md-4 col-xs-4"><%= f.text_field :ticket_title %></div>
+    <div class="col-md-4 col-xs-4"><%= f.select(:status, ['Working', 'Blocked', 'Completed']) %></div>
+    <div class="col-md-12"><h4>Ticket Notes</h4></div>
     <div class="col-md-12"><%= f.text_area :ticket_notes %></div>
-    <div class=col-md-12><h4>Production Notes</h4></div>
-    <div class=col-md-6>Rake Task: <%= f.check_box(:rake_task) %></div>
-    <div class=col-md-6>Migration: <%= f.check_box(:migration) %></div>
-    <div class=col-md-12><%= f.text_field :other_prod_concern %></div>
-    <div class=col-md-12><h4>Regression Notes</h4></div>
-    <div class="col-md-12">Regression:<%= f.check_box(:regression_concern) %></div>
-    <div class="col-md-12"><%= f.text_field :regression_textbox %></div>
-    <div class=col-md-12><h4>Archive</h4></div>
-    <div class="col-md-12"><%= f.check_box(:archived) %></div>
+    <div class="col-md-12"><h4>Production Notes</h4></div>
+    <div class="col-md-12"><%= f.text_area :other_prod_concern %></div>
+    <div class="col-md-12"><h4>Regression Notes</h4></div>
+    <div class="col-md-12"><%= f.text_area :regression_textbox %></div>
+    <div class="col-md-3 col-xs-3">Rake Task: <%= f.check_box(:rake_task) %></div>
+    <div class="col-md-3 col-xs-3">Migration: <%= f.check_box(:migration) %></div>
+    <div class="col-md-3 col-xs-3">Regression:<%= f.check_box(:regression_concern) %></div>
+    <div class="col-md-3 col-xs-3">Archive: <%= f.check_box(:archived) %></div>
     <div class="col-md-12"><%= f.submit "Update", class:"btn btn-danger" %></div>
   <% end %>
 </div>
