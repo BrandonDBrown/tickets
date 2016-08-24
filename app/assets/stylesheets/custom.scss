@@ -38,15 +38,29 @@
     );
 }
 
+.modal-content h4 {
+  color:#6b83ac;
+}
 .modal-content {
   background-color: hsl(180, 24%, 12%);
-  color:#6b83ac;
+  color:#7b875b;
   font-family: 'Lato', sans-serif;
 }
 
 hr {
   color: whitesmoke;
   margin-top:2px;
+}
+
+textare, #card_ticket_title, #card_link_to_ticket {
+  background-color: hsl(180, 24%, 12%);
+  color:#6b83ac;
+}
+
+#card_ticket_title, #card_link_to_ticket {
+  border-top: none;
+  border-right: none;
+  border-left: :none;
 }
 
 #card_ticket_notes {
@@ -61,7 +75,7 @@ hr {
 
 .btn-danger {
   position:absolute;
-  top:32px;
+  top:427px;
   left:385px;
 }
 .btn-success {
@@ -72,8 +86,4 @@ hr {
 
 #filters {
   margin-bottom:10px;
-}
-
-.col-xs-4 {
-  margin-bottom: 5px;
 }
