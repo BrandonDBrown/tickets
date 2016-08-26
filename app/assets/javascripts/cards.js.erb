@@ -1,10 +1,6 @@
 $(function() {
-  $( ".btn-success" ).on( "click", function(e) {
-    e.preventDefault();
+  $( ".btn-success" ).on( "click", function() {
     $('.isotope').append('<div class="col-md-3" data-toggle="modal" data-target="#newTicket"><div class="thumbnail ticketinfo">#4903Change color of button</div></div>');
   });
 
-  $('#update').on('click', function() {
-    $('#myForm').submit();
-  });
 });
