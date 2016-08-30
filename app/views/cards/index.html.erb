@@ -78,24 +78,20 @@
         </div>
         <div class="modal-body editor">
           <div class="row">
-            <div class=col-md-12><h4>Ticket Status</h4></div>
-            <div class="col-md-12"><%= card.status %></div>
-            <div class=col-md-12><h4>Ticket Notes</h4></div>
+            <div class="col-md-12 col-xs-12"><h4>Ticket Notes : <%= card.status %></h4></div>
             <div class="col-md-12"><%= simple_format card.ticket_notes %></div>
             <div class=col-md-12><h4>Production Notes</h4></div>
             <div class=col-md-6>Rake Task: <%= card.rake_task %></div>
             <div class=col-md-6>Migration: <%= card.migration %></div>
             <div class="col-md-12"><%= simple_format card.other_prod_concern %></div>
             <div class=col-md-12><h4>Regression Notes</h4></div>
-            <div class="col-md-12"><%= card.regression_concern %></div>
             <div class="col-md-12"><%= simple_format card.regression_textbox %></div>
-            <div class=col-md-12><h4>Archive</h4></div>
-            <div class="col-md-12"><%= card.archived %></div>
+            <div class="col-md-3 col-xs-4 pull-right">
+              <%= link_to "Edit", edit_path(card), :class => 'btn btn-primary', :remote => true %>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <%= link_to "Edit", edit_path(card), :class => 'btn btn-primary', :remote => true %>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
         </div>
       </div>
     </div>

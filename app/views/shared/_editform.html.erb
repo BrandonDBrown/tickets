@@ -13,6 +13,9 @@
     <div class="col-md-3 col-xs-3">Migration: <%= f.check_box(:migration) %></div>
     <div class="col-md-3 col-xs-3">Regression:<%= f.check_box(:regression_concern) %></div>
     <div class="col-md-3 col-xs-3">Archive: <%= f.check_box(:archived) %></div>
-    <div class="col-md-12"><%= f.submit "Update", class:"btn btn-danger" %></div>
+    <div class="col-md-4 col-xs-4 pull-right">
+      <%= f.submit "Update", class:"btn btn-danger" %>
   <% end %>
+      <button type="button" class="btn btn-defaul" data-dismiss="modal">Close</button>
+    </div>
 </div>

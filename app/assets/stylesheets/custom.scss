@@ -74,11 +74,6 @@ textarea, #card_ticket_title, #card_link_to_ticket {
   margin-top: 10px;
 }
 
-.btn-danger {
-  position:absolute;
-  top:227px;
-  left:385px;
-}
 .btn-success {
   position:absolute;
   top:524px;
@@ -87,4 +82,9 @@ textarea, #card_ticket_title, #card_link_to_ticket {
 
 #filters {
   margin-bottom:10px;
+}
+
+.pull-right {
+  margin-top:15px;
+  padding-right: 0px;
 }
